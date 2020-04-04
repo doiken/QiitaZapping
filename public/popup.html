@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Qiita Zapping Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+    </style>
+    <script src="js/vendor.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form name='mainForm'>
+        <table>
+          <tr>
+            <th></th>
+            <th>domain</th>
+            <th>query</th>
+            <th>token</th>
+          </tr>
+          <tr>
+            <td><input type="radio" name="isActive" value="1" /></td>
+            <td><input type="input" name="domain1"></td>
+            <td><input type="input" id="query1"></td>
+            <td><input type="password" id="token1"></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="isActive" value="2" /></td>
+            <td><input type="input" name="domain2" placeholder="xxx.qiita.com"></td>
+            <td><input type="input" id="query2" placeholder="tag:yyy" ></td>
+            <td><input type="password" id="token2"></td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="isActive" value="3" /></td>
+            <td><input type="input" name="domain3" placeholder="xxx.qiita.com"></td>
+            <td><input type="input" id="query3" placeholder="tag:yyy"></td>
+            <td><input type="password" id="token3"></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <button id="save">Save</button>
+    <div id="status"></div>
+    <script src="js/popup.js"></script>
+  </body>
+</html>
+

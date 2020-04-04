@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+  "name": "QiitaZapping",
+  "description": "Support zapping Qiita items by querying Qiita API",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon_32.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "content_scripts": [{
+    "matches": [
+      "https://qiita.com/*/items/*",
+      "https://*.qiita.com/*/items/*"
+    ],
+    "js": [
+      "js/vendor.js",
+      "js/content_script.js"
+    ]
+  }],
+  "background": {
+    "scripts": [
+      "js/vendor.js",
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "commands": {
+    "go_to_next": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Right"
+      },
+      "description": "go to next item"
+    },
+    "go_to_previous": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Left"
+      },
+      "description": "go to previous item"
+    }
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}
