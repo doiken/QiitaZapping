@@ -33,7 +33,7 @@ function restore_options() {
     [QiitaZapping.KEY_QUERIES]: [{
       id: 1,
       domain: "qiita.com",
-      query: "tag:Rails",
+      query: "tag:日報",
       token: "",
       isActive: 1,
     }]
