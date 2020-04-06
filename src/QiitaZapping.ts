@@ -63,7 +63,8 @@ export class QiitaZapping {
     }
 
     private async fetchQiitaItems(query: QiitaApiQuery): Promise<QiitaApiCache.NeiborMap> {
-        const response = await fetch(`https://${query.domain}/api/v2/items?page=1&per_page=100&query=${query.query}`, {
+        const q = (query.query) ? `&query=${query.query}` : "";
+        const response = await fetch(`https://${query.domain}/api/v2/items?page=1&per_page=100${q}`, {
             headers: { "Authorization": `Bearer ${query.token}` }
         });
         const json = await response.json();
