@@ -30,13 +30,13 @@
   "commands": {
     "go_to_next": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Right"
+        "default": "Alt+Shift+L"
       },
       "description": "go to next item"
     },
     "go_to_previous": {
       "suggested_key": {
-        "default": "Ctrl+Shift+Left"
+        "default": "Alt+Shift+H"
       },
       "description": "go to previous item"
     }
