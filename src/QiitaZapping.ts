@@ -51,6 +51,7 @@ export class QiitaZapping {
     async getNeighbors(): Promise<QiitaApiCache.NeiborMap.Neibors> {
         const neiborMap = await this.getNeighborMap();
         const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+        if (!tabs[0] || !tabs[0].hasOwnProperty("url")) return {};
         return neiborMap[tabs[0].url] || {};
     }
 
