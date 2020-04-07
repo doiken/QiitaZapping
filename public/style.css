@@ -1,0 +1,54 @@
+/* draw half circle */
+._QZ_circle {
+  display: inline-block;
+	width: 50px;
+	height: 100px;
+  background: #888;
+  box-shadow: 0px 0px 15px -5px #05071A
+}
+
+._QZ_circle_right {
+	border-radius: 100% 0 0 100% / 50%;
+}
+._QZ_circle_left{
+	border-radius: 0 100% 100% 0%/0 50% 50% 0;
+}
+
+/* draw arrow */
+._QZ_circle:after{
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  transform: rotate(45deg);
+}
+
+._QZ_circle_right:after {
+  border-top: solid 8px #fff;
+  border-right: solid 8px #fff;
+  right: 10px;
+}
+
+._QZ_circle_left:after {
+  border-bottom: solid 8px #fff;
+  border-left: solid 8px #fff;
+  left: 10px;
+}
+
+/* posision center */
+._QZ_center {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+._QZ_center_right{
+	right: 0px;
+}
+._QZ_center_left{
+	left:  0px;
+}
