@@ -34,7 +34,7 @@ QiitaZapping を用いて会社の日報を読んでいる様子
     - 省略時: 最新の投稿を取得
 - token
     - 発行方法: qiita のプロフィールアイコンから `設定` -> `アプリケーション` -> `個人用アクセストークン`
-    - スコープ: `reqd_qiita` or `read_qiita_team`
+    - スコープ: `read_qiita` or `read_qiita_team`
 
 最後に有効化するラジオボタンを選択して `Save` を押下。
 
