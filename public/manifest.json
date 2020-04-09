@@ -15,6 +15,7 @@
       "https://qiita.com/*/items/*",
       "https://*.qiita.com/*/items/*"
     ],
+    "run_at": "document_end",
     "js": [
       "js/vendor.js",
       "js/content_script.js"

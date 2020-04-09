@@ -28,4 +28,4 @@ async function appendPrefetchForNeibors() {
     });
 }
 
-window.onload = appendPrefetchForNeibors;
+appendPrefetchForNeibors();
