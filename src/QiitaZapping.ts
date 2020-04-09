@@ -52,7 +52,8 @@ export class QiitaZapping {
         const neiborMap = await this.getNeighborMap();
         const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
         if (!tabs[0] || !tabs[0].hasOwnProperty("url")) return {};
-        return neiborMap[tabs[0].url] || {};
+        const currentUrl = tabs[0].url.split(/[?#]/)[0]; // remove query and anchor for maching neibor urls
+        return neiborMap[currentUrl] || {};
     }
 
     async goTo(nextPrev: string): Promise<void> {
