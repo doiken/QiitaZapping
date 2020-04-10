@@ -32,15 +32,9 @@
   },
   "commands": {
     "go_to_next": {
-      "suggested_key": {
-        "mac": "Ctrl+MacCtrl+Right"
-      },
       "description": "go to next item"
     },
     "go_to_previous": {
-      "suggested_key": {
-        "mac": "Ctrl+MacCtrl+Left"
-      },
       "description": "go to previous item"
     }
   },
