@@ -37,7 +37,7 @@ function restore_options() {
       token: "",
       isActive: 1,
     }]
-  }, function (cache: StorageCache) {
+  }).then((cache: StorageCache) => {
     // @ts-ignore
     const form = <HTMLFormElement> document.forms.mainForm;
     cache.searchQueries.forEach((q) => {

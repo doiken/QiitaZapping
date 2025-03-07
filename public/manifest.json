@@ -17,7 +17,6 @@
     ],
     "run_at": "document_end",
     "js": [
-      "js/vendor.js",
       "js/content_script.js"
     ],
     "css": [
@@ -25,11 +24,8 @@
     ]
   }],
   "background": {
-    "scripts": [
-      "js/vendor.js",
-      "js/background.js"
-    ],
-    "persistent": false
+    "service_worker": "js/background.js",
+    "type": "module"
   },
   "commands": {
     "go_to_next": {
