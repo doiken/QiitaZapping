@@ -3,7 +3,7 @@
   "name": "QiitaZapping",
   "description": "Support zapping Qiita items by querying Qiita API",
   "version": "0.5",
-  "browser_action": {
+  "action": {
     "default_icon": "icon_32.png",
     "default_popup": "popup.html"
   },
