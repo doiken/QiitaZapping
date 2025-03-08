@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "QiitaZapping",
   "description": "Support zapping Qiita items by querying Qiita API",
-  "version": "0.5",
+  "version": "0.7",
   "action": {
     "default_icon": "icon_32.png",
     "default_popup": "popup.html"
