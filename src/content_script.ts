@@ -1,5 +1,3 @@
-import 'chrome-extension-async';
-
 const classLR = {
     next: "_QZ_center_right _QZ_circle_right",
     previous: "_QZ_center_left _QZ_circle_left",

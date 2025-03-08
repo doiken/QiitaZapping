@@ -1,5 +1,3 @@
-import 'chrome-extension-async';
-
 export class QiitaZapping {
     static readonly KEY_CACHE = "apiCache";
     static readonly KEY_QUERIES = "searchQueries";
