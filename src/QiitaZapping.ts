@@ -46,16 +46,14 @@ export class QiitaZapping {
         return cacheUrl.neiborMap;
     }
 
-    async getNeighbors(): Promise<QiitaApiCache.NeiborMap.Neibors> {
+    async getNeighbors(currentUrl: string): Promise<QiitaApiCache.NeiborMap.Neibors> {
         const neiborMap = await this.getNeighborMap();
-        const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
-        if (!tabs[0] || !tabs[0].hasOwnProperty("url")) return {};
-        const currentUrl = tabs[0].url.split(/[?#]/)[0]; // remove query and anchor for maching neibor urls
-        return neiborMap[currentUrl] || {};
+        const matchUrl = currentUrl.split(/[?#]/)[0]; // remove query and anchor for maching neibor urls
+        return neiborMap[matchUrl] || {};
     }
 
-    async goTo(nextPrev: string): Promise<void> {
-        const neibors = await this.getNeighbors();
+    async goTo(nextPrev: string, currentUrl: string): Promise<void> {
+        const neibors = await this.getNeighbors(currentUrl);
         if (nextPrev in neibors) {
             const goToUrl = neibors[nextPrev];
             chrome.tabs.update({ url: goToUrl });
