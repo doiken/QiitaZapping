@@ -2,16 +2,17 @@ import { QiitaZapping } from './QiitaZapping';
 
 let zapping = new QiitaZapping();
 const commands = {
-    "go_to_next": () => zapping.goTo("next"),
-    "go_to_previous": () => zapping.goTo("previous"),
+    "go_to_next": (url: string) => zapping.goTo("next", url),
+    "go_to_previous": (url: string) => zapping.goTo("previous", url),
 };
-chrome.commands.onCommand.addListener(function (command) {
-    commands[command]();
+chrome.commands.onCommand.addListener(function (command, tab) {
+    if (!tab || !tab.url) return;
+    commands[command](tab.url);
 });
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    switch (request) {
+    switch (request.type) {
         case 'neibors':
-            zapping.getNeighbors().then((neibors) => {
+            zapping.getNeighbors(request.url).then((neibors) => {
                 sendResponse(neibors);
             })
             break;

@@ -18,7 +18,7 @@ function insertDom(url: string, prevNext: string) {
 
 async function appendPrefetchForNeibors() {
     // @ts-ignore
-    const neibors = <QiitaApiCache.NeiborMap.Neibors> await chrome.runtime.sendMessage("neibors");
+    const neibors = <QiitaApiCache.NeiborMap.Neibors> await chrome.runtime.sendMessage({ type: "neibors", url: location.href });
     const keys = Object.keys(neibors);
     if (keys.length === 0) return;
     keys.forEach((key) => {

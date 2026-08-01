@@ -25,7 +25,7 @@ function save_options() {
   });
 
   chrome.storage.local.set({ [QiitaZapping.KEY_QUERIES]: query }, () => info('Options saved.'));
-  chrome.runtime.sendMessage("refresh");
+  chrome.runtime.sendMessage({ type: "refresh" });
 }
 
 function restore_options() {
